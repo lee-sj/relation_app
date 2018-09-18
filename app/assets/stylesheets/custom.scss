@@ -1,1 +1,47 @@
 @import "bootstrap";
+
+/* universal */
+
+body {
+    padding-top: 80px;
+}
+
+/* typography */
+
+h1,h2,h3,h4,h5,h6 {
+    line-height: 1;
+}
+
+/* header */
+#logo {
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-size: 1.7em;
+    font-weight: bold;
+    &:hover {
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+}
+
+/* fotter */
+footer {
+    margin-top: 45px;
+    a {
+        color: #555;
+        &:hover {
+            color: #222;
+        }
+    }
+    small {
+        float: left;
+    }
+    ul {
+        float: right;
+        list-style: none;
+        li {
+            float: left;
+            margin-left: 15px;
+        }
+    }
+}
