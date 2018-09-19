@@ -1,0 +1,8 @@
+<h1><%= current_user.email %>님의 프로필 입니다. </h1>
+
+<p><%= @profile.name %></p>
+<p><%= @profile.address %></p>
+<p><%= @profile.mobile %></p>
+<p><%= @profile.birth %></p>
+
+<%= link_to 'Edit', '/edit_profile' %>
