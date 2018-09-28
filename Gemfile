@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'bootstrap'
+gem 'bootstrap_form', '>= 4.0.0.alpha1'
 gem 'pry-rails'
 gem 'rails', '~> 5.0.7'
 gem 'puma', '~> 3.0'
