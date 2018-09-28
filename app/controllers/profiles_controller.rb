@@ -8,6 +8,7 @@ class ProfilesController < ApplicationController
     
     def create
         @profile = Profile.new(profile_params)
+        @profile.address = convert_address
         @profile.user = current_user
         if @profile.save
             redirect_to my_profile_url
@@ -24,6 +25,7 @@ class ProfilesController < ApplicationController
     end
     
     def update 
+        @profile.address = convert_address
         if @profile.update(profile_params)
             redirect_to my_profile_url
         else
@@ -36,10 +38,18 @@ class ProfilesController < ApplicationController
         @profile = current_user.profile
     end
     def profile_params
-        params.require(:profile).permit(:name, :address, :mobile, :birth)
+        params.require(:profile).permit(:name, :mobile, :birth)
     end
     
     def write_profile
        redirect_to new_profile_url if current_user.profile.nil?
+    end
+    
+    def convert_address 
+        address = ''
+        params[:profile][:address].each_value do |v|
+         address += "#{v} "
+        end
+        return address
     end
 end
