@@ -2,6 +2,7 @@ class ProfilesController < ApplicationController
     before_action :set_profile, only: [:show,:edit,:update]
     before_action :write_profile, except: [:new,:create]
     def new
+        redirect_to edit_profile_url unless current_user.profile.hil?
         @profile = Profile.new
     end
     
