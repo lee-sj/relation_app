@@ -1,0 +1,7 @@
+<h1><%= @article.title %></h1>
+<strong> <%= @article.user.profile.name %></strong>
+<hr/ >
+<p> <%= @article.content%></p>
+
+<hr/ >
+<%= link_to 'edit', edit_article_path(@article) %>
