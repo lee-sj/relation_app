@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show,:edit,:update,:destory]
   before_action :authenticate_user!, except: [:show,:index]
+  before_action :set_article, only: [:show,:edit,:update,:destory]
+  before_action :check_owner, only: [:edit,:update,:destroy]
   def index
     @article = Article.page(params[:page]).per(10).order(created_at: :desc)
   end
@@ -36,10 +37,16 @@ class ArticlesController < ApplicationController
     end
   end
   private
+  
   def set_article 
     @article = Article.find(params[:id])
   end
+  
   def article_params 
     params.require(:article).permit(:title, :content)
+  end
+  
+  def check_owner
+   redirect_back fallback_location: root_url if @article.user != current_user  
   end
 end
