@@ -4,6 +4,9 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
+gem 'tinymce-rails'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'bootstrap'
 gem 'bootstrap_form', '>= 4.0.0.alpha1'

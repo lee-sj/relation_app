@@ -3,7 +3,8 @@
         <%= f.text_field :title %>
     </div>
     <div>
-        <%= f.text_area :content, rows: 10%>
+        <%= f.text_area :content, :class => "tinymce", rows: 10 %>
+        <%= tinymce %>
     </div>
     <div>
         <%= f.submit %>

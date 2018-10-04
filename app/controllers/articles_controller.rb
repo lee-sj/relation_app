@@ -1,7 +1,8 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show,:edit,:update,:destory]
+  before_action :authenticate_user!, except: [:show,:index]
   def index
-    @article = Article.all
+    @article = Article.page(params[:page]).per(10).order(created_at: :desc)
   end
   def new 
     @article = Article.new
@@ -20,8 +21,8 @@ class ArticlesController < ApplicationController
   def edit
   end 
   def update
-    @article.user = current_user
-    if @article.update(article_params)
+    @article.user = current_user 
+    if @article.update(article_params) && @article.user == current_user
       redirect_to article_url(@article)
     else
       render 'new'

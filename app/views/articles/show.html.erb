@@ -1,7 +1,11 @@
 <h1><%= @article.title %></h1>
+
+<%= image_tag gravatar_url(@article.user.email, 64), alt: @article.user.profile.name %>
+
 <strong> <%= @article.user.profile.name %></strong>
 <hr/ >
-<p> <%= @article.content%></p>
+
+<p> <%= @article.content.html_safe%></p>
 
 <hr/ >
 <%= link_to 'edit', edit_article_path(@article) %>
