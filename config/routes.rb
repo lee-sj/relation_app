@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # like
   # post '/articles/:id/like', to: 'likes#create'
   # delete '/articles/:id/dislike', to: 'likes#destroy'
-  post '/articles/:id/like', to: 'likes#like_toggle'
+  post '/articles/:id/like', to: 'likes#like_toggle', as: 'like_article'
   
   # article
   root to: 'articles#index'
