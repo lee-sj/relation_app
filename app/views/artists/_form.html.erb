@@ -1,0 +1,11 @@
+<%= bootstrap_form_for artist do |f| %>
+    <div>
+        <%= f.text_field :name %>
+    </div>
+    <div><%#= f.select_tag :nationality %></div>
+    <div></div>
+    <div>
+        <%= f.file_field :image, accept: 'image/jpeg imaage/jpg image/gif imgae/png' %>
+    </div>
+    <%= f.submit %>
+<% end %>
