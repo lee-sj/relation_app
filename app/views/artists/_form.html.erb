@@ -2,10 +2,21 @@
     <div>
         <%= f.text_field :name %>
     </div>
-    <div><%#= f.select_tag :nationality %></div>
+    <div class="form-group">
+        <label for="artist_nationality">nationality</label>
+        <%= f.country_select :nationality,class: "form-control", priority_countries: ["KR", "US"] %>
+    </div>
     <div></div>
     <div>
         <%= f.file_field :image, accept: 'image/jpeg imaage/jpg image/gif imgae/png' %>
     </div>
     <%= f.submit %>
 <% end %>
+<script>
+    $('#artist_image').on('change',function(){
+        //get the file name
+        var fileName = $(this).val().replace(/^.*[\\\/]/, '');
+        //replace the "Choose a file" label
+        $(this).next('.custom-file-label').html(fileName);
+    })
+</script>
