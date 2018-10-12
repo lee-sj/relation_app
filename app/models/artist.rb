@@ -1,5 +1,8 @@
 class Artist < ApplicationRecord
     mount_uploader :image, ProfileImgUploader
+    has_many :participates
+    has_many :songs, through: :participates , source: :song
+    
     validates :name, presence: true
     validate :image_size
     

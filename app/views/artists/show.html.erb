@@ -4,6 +4,14 @@
 <%= link_to fa_icon('trash 2x'), artist_path(@artist), method: :delete, data: {confirm: '삭제하시겠습니까?'} %>
 <hr />
 <%#= @artist.nationality %>
-<%= image_tag @artist.image.url if @artist.image? %>
+<%= image_tag @artist.image.url, class: 'image-center' if @artist.image? %>
 <%#= image_tag @artist.image.thumb.url if @artist.image? %>
 <%#= @artist.lyric.html_safe %>
+<ul>
+    <% @artist.songs.each do |song| %>
+        <li>
+            <%= image_tag song.cover.thumb.url if song.cover? %>
+            <%= link_to song.title, song_path(song) %>
+        </li>
+    <% end %>
+</ul>

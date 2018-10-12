@@ -25,7 +25,7 @@ class ArtistsController < ApplicationController
   end
   
   def update 
-    if @artist.update
+    if @artist.update artist_params
       redirect_to artist_url(@artist)
     else 
       render "edit"
