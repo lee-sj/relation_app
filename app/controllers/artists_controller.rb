@@ -1,5 +1,6 @@
 class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :edit, :update, :destroy]
+  before_action :check_role, except: [:index, :show]
   def new
     @artist = Artist.new
   end
@@ -43,4 +44,8 @@ class ArtistsController < ApplicationController
   def artist_params
     params.require(:artist).permit(:name, :nationality, :image)
   end
+  def check_role
+    redirect_back(fallback_location: root_url) unless (current_user.profile.role == 'admin') || (current_user.profile.role == 'editor')
+  end
+
 end

@@ -1,5 +1,6 @@
 class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
+  before_action :check_role, except: [:index, :show]
   def new
     @song = Song.new
   end
@@ -45,5 +46,9 @@ class SongsController < ApplicationController
   
   def song_params
     params.require(:song).permit(:title, :lyric, :cover)
+  end
+  
+  def check_role
+    redirect_back(fallback_location: songs_url) unless (current_user.profile.role == 'admin') || (current_user.profile.role == 'editor')
   end
 end
