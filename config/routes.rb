@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # Jukebox
+  get '/jukebox', to: 'jukebox#index'
+
   # song
   resources :songs
   
