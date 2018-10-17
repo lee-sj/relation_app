@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  
+  # Participate
+  resources :participates, only: [:new, :create, :edit, :update, :destory]
+  
   # Jukebox
   get '/jukebox', to: 'jukebox#index'
 
