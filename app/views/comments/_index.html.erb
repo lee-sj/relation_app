@@ -1,0 +1,15 @@
+<% commentable.comments.each do |comment| %>
+    <div class="card comment-card">
+      <h5 class="card-header">
+          <%= comment.user.profile.name %>
+          <%= link_to fa_icon('trash'), comment_path(comment), method: :delete, data: {confirm: 'comment 를 삭제합니다'} %>
+      </h5>
+      <div class="card-body">
+        <!--<h5 class="card-title">Special title treatment</h5>-->
+        <p class="card-text">
+         <%= comment.content %>
+        </p>
+        <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+      </div>
+    </div>
+<% end %>

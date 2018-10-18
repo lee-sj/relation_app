@@ -5,3 +5,6 @@
 <%= render 'like' %>
 <hr/ >
 <p> <%= @article.content.html_safe%></p>
+
+<%= render 'comments/form', commentable: @article %>
+<%= render 'comments/index', commentable: @article %>

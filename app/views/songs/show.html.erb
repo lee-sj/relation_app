@@ -18,3 +18,6 @@
 <%= image_tag @song.cover.url , class: 'image-center'if @song.cover? %>
 <%#= image_tag @song.cover.thumb.url if @song.cover? %>
 <%= @song.lyric.html_safe %>
+
+<%= render 'comments/form', commentable: @song %>
+<%= render 'comments/index', commentable: @song %>
