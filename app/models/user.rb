@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_one :profile, dependent: :destroy  
   has_many :articles
+  has_many :comments
   has_many :likes
   has_many :l_articles, through: :likes, source: :article
   

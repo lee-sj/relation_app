@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
+  # Comment
+  resources :comments, only: [:create, :destroy]
+  
   # Participate
   resources :participates, only: [:new, :create, :edit, :update, :destory]
   

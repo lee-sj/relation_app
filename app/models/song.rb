@@ -1,5 +1,7 @@
 class Song < ApplicationRecord
     mount_uploader :cover , CoverUploader
+    
+    acts_as_commentable
     has_many :participates
     has_many :artists, through: :participates, source: :artist
     

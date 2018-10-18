@@ -1,5 +1,7 @@
 class Artist < ApplicationRecord
     mount_uploader :image, ProfileImgUploader
+    
+    acts_as_commentable
     has_many :participates
     has_many :songs, through: :participates , source: :song
     
