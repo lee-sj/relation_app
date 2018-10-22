@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
+
 gem 'acts_as_commentable'
 
 gem 'country_select'

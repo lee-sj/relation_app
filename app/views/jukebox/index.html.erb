@@ -1,5 +1,5 @@
 <h1>Jukebox</h1>
-<%= link_to 'join artist&song', new_participate_path %>
+<%= link_to 'join artist&song', new_participate_path if user_editable? %>
 <div class="row">
     <div class="col-md-6">
         <h2>Artist</h2>

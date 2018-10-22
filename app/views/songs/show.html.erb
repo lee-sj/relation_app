@@ -1,4 +1,6 @@
 <h1><%= @song.title %></h1>
+
+<%= render 'follow_UI', song: @song %>
 <%  if user_editable? %>
 <%= link_to fa_icon('edit 2x'), edit_song_path(@song) %> 
 <%= link_to fa_icon('trash 2x'), song_path(@song), method: :delete, data: {confirm: '삭제하시겠습니까?'} %>

@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  acts_as_follower
+  acts_as_followable
   has_one :profile, dependent: :destroy  
   has_many :articles
   has_many :comments

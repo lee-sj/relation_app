@@ -14,7 +14,7 @@
   <tbody>
     <% @article.each do |article| %>
       <tr>
-        <td><%= link_to article.title, article %></td>
+        <td><%= link_to "#{article.title}(#{article.comments.count})", article %></td>
         <td><%= article.user.profile.name %></td>
         <td><%= article.likes.count %></td>
       </tr>
