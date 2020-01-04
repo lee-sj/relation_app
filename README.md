@@ -35,3 +35,5 @@ rails drop table (검색)
 Droptable 
 
 rails db:rollback << 마지막 마이그레이션 전상황으로 넘어감
+
+프로젝트 업데이트 진행중
