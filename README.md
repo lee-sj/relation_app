@@ -37,3 +37,18 @@ Droptable
 rails db:rollback << 마지막 마이그레이션 전상황으로 넘어감
 
 프로젝트 업데이트 진행중
+
+### Heroku deploy setting DB
+
+```
+# must login status
+
+$ heroku restart
+
+$ heroku pg:reset DATABASE
+
+$ heroku run rails db:migrate
+
+$ heroku run rails db:seed
+
+```
