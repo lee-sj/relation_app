@@ -13,7 +13,7 @@ gem 'country_select'
 
 gem 'carrierwave'
 gem 'mini_magick'
-
+# gem 'sqlite3'
 gem "font-awesome-rails"
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
@@ -33,7 +33,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 group :development, :test do
   gem 'byebug', platform: :mri
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.3.0'
 end
 
 group :development do
@@ -46,7 +46,7 @@ end
 
 group :production do
   gem 'rails_12factor'
-  gem 'pg', '~> 1.1.3'
+  gem 'pg', '~> 1.1.4'
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
